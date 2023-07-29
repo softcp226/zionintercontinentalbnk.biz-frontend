@@ -21,7 +21,7 @@ const fetch_delete_message = async (DelBtn, message) => {
   DelBtn.innerHTML = "Proccessing...";
   try {
     const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/admin/support_messages/delete_message",
+      "https://zionintercontinentalbnk-biz-backend.glitch.me/api/admin/support_messages/delete_message",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -75,7 +75,7 @@ const setText = (userMessages) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/admin/support_messages",
+      "https://zionintercontinentalbnk-biz-backend.glitch.me/api/admin/support_messages",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

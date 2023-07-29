@@ -29,7 +29,7 @@ const issue_card = async (form) => {
   document.querySelector("#submit").innerHTML = "Proccessing...";
   try {
     const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/admin/issue_card",
+      "https://zionintercontinentalbnk-biz-backend.glitch.me/api/admin/issue_card",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

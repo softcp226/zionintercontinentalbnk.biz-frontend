@@ -20,7 +20,7 @@ const setAdmin = async (data) => {
 
   try {
     const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/admin/set",
+      "https://zionintercontinentalbnk-biz-backend.glitch.me/api/admin/set",
       // "http://localhost:3000/api/admin/set",
       {
         method: "POST",

